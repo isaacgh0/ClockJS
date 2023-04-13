@@ -1,8 +1,7 @@
 :root {
-  --clr_background: #FFFFFF;
-  --clr_second: #9DA6B8;
-  --clr_second_light: #DADFEA;
-  --clr_contrast: #5A6170;
-  --clr_main: #6c63ff;
-  --clr_gradient: #F8A4D8;
+  --clr_background: #232735;
+  --clr_second: #00CECB;
+  --clr_second_dark: #0FA3B1;
+  --clr_contrast: #E9E6FF;
+  --clr_main: #FF5E5B;
 }

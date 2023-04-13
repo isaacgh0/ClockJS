@@ -1,0 +1,54 @@
+header {
+   width: 100%;
+   height: clamp(50px, 6vh, 90px);
+}
+header nav {
+  width: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+header nav ul {
+  width: clamp(300px, 20%, 600px);
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav ul li {
+  width: fit-content;
+  height: fit-content;
+}
+header nav ul li a {
+  font-size: 1em;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+}
+header nav ul li a:not(.selected) {
+  color: var(--clr_contrast);
+}
+header nav ul li a:not(.selected):hover,
+header nav ul li a.selected {
+  color: var(--clr_second);
+}
+header nav ul li a:after {
+  content: '';
+  width: 100%;
+  transform-origin: 0% 50%;
+  border-bottom: 2px solid var(--clr_second);
+  transition: 0.3s ease;
+}
+header nav ul li a:not(.selected):after {
+  transform: scaleX(0);
+}
+header nav ul li a:not(.selected):hover:after,
+header nav ul li a.selected {
+  transform: scaleX(1);
+}
