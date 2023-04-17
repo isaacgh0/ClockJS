@@ -2,6 +2,11 @@ header {
    width: 100%;
    height: clamp(50px, 6vh, 90px);
 }
+header div.phone_view {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
 header nav {
   width: inherit;
   height: 100%;
@@ -35,8 +40,10 @@ header nav ul li a:not(.selected) {
   color: var(--clr_contrast);
 }
 header nav ul li a:not(.selected):hover,
+header nav ul li a:not(.selected):focus,
 header nav ul li a.selected {
   color: var(--clr_second);
+  outline: none;
 }
 header nav ul li a:after {
   content: '';
@@ -49,6 +56,7 @@ header nav ul li a:not(.selected):after {
   transform: scaleX(0);
 }
 header nav ul li a:not(.selected):hover:after,
+header nav ul li a:not(.selected):focus:after,
 header nav ul li a.selected {
   transform: scaleX(1);
 }
@@ -60,5 +68,105 @@ header nav ul li a.selected {
 }
 
 @media screen and (max-width: 480px) {
-
+  header {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  header div.phone_view {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: clamp(50px, 6vh, 90px);
+  }
+  header div.phone_view button#navbar_menu {
+    position: absolute;
+    border: none;
+    background: none;
+    width: 30px;
+    height: 30px;
+    left: 5%;
+    top: calc(50% - 15px);
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+  header div.phone_view button#navbar_menu:before,
+  header div.phone_view button#navbar_menu:after {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--clr_contrast);
+    left: 5%;
+    transition: 0.3s ease;
+  }
+  header div.phone_view button#navbar_menu.close:before {
+    top: 25%;
+    transform: rotate(0);
+  }
+  header div.phone_view button#navbar_menu.close:after {
+    top: calc(75% - 4px);
+    transform: rotate(0);
+  }
+  header div.phone_view button#navbar_menu.open:before {
+    top: calc(50% - 2px);
+    transform: rotate(45deg);
+  }
+  header div.phone_view button#navbar_menu.open:after {
+    top: calc(50% - 2px);
+    transform: rotate(-45deg);
+  }
+  header div.phone_view button#navbar_menu:hover,
+  header div.phone_view button#navbar_menu:focus {
+    outline: none;
+  }
+  header div.phone_view h1 {
+    font-size: 1.6em;
+    color: var(--clr_main);
+  }
+  header nav {
+    width: 100%;
+    background: color-mix(in srgb, var(--clr_background), #000 30%);
+    justify-content: flex-start;
+    height: fit-content;
+    transition: 0.3s ease;
+  }
+  header nav.close {
+    max-height: 0;
+    padding: 0 5%;
+  }
+  header nav.open {
+    max-height: 50vh;
+    padding: 10px 5%;
+  }
+  header nav ul {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    transition: 0.3s ease;
+  }
+  header nav.close ul {
+    visibility: hidden;
+    opacity: 0;
+  }
+  header nav.open ul {
+    visibility: visible;
+    opacity: 1;
+  }
+  header nav ul li {
+    width: fit-content;
+    height: fit-content;
+  }
 }
