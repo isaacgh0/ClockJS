@@ -1,0 +1,45 @@
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2vw;
+}
+footer span,
+footer button {
+  color: var(--clr_contrast);
+  font-size: 0.9em;
+}
+footer ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+footer ul li a img {
+  filter: brightness(0) invert(1);
+  width: 35px;
+  height: 35px;
+  transition: 0.2s ease;
+}
+footer ul li a:focus,
+footer ul li a:hover {
+  outline: none;
+}
+footer ul li a:focus img,
+footer ul li a:hover img {
+  opacity: 0.65;
+}
+footer button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+footer button:focus,
+footer button:hover {
+  outline: none;
+  color: var(--clr_main);
+}
