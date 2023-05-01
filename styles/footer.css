@@ -19,7 +19,7 @@ footer ul {
   gap: 10px;
 }
 footer ul li a img {
-  filter: brightness(0) invert(1);
+  /* filter: brightness(0) invert(1); */
   width: 35px;
   height: 35px;
   transition: 0.2s ease;
@@ -72,5 +72,27 @@ footer button:hover {
 }
 
 @media screen and (max-width: 480px) {
-
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(2, fit-content);
+    align-items: center;
+    justify-items: center;
+  }
+  footer span {
+    font-size: 1em;
+  }
+  footer button {
+    grid-row: 2;
+    font-size: 0.75em;
+  }
+  footer ul {
+    grid-row: 3;
+    grid-column: 1;
+    justify-content: space-between;
+    padding: 15px 0 0 0;
+  }
+  footer ul li a img {
+    width: 30px;
+    height: 30px;
+  }
 }
