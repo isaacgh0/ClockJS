@@ -6,11 +6,13 @@ footer {
   justify-content: space-between;
   padding: 0 2vw 15px 2vw;
 }
+
 footer span,
 footer button {
   color: var(--clr_contrast);
   font-size: 0.9em;
 }
+
 footer ul {
   display: flex;
   flex-direction: row;
@@ -18,28 +20,34 @@ footer ul {
   justify-content: space-between;
   gap: 10px;
 }
+
 footer ul li a img {
   /* filter: brightness(0) invert(1); */
   width: 35px;
   height: 35px;
   transition: 0.2s ease;
 }
+
 footer ul li a:focus,
 footer ul li a:hover {
   outline: none;
 }
+
 footer ul li a:focus img,
 footer ul li a:hover img {
   opacity: 0.65;
 }
-footer button {
-  background: none;
+
+footer a {
+  color: var(--clr_contrast);
   border: none;
   cursor: pointer;
   transition: 0.2s ease;
+  text-decoration: none;
 }
-footer button:focus,
-footer button:hover {
+
+footer a:focus,
+footer a:hover {
   outline: none;
   color: var(--clr_main);
 }
@@ -53,16 +61,20 @@ footer button:hover {
     align-items: center;
     justify-items: start;
   }
+
   footer span,
   footer button {
     grid-column: 1;
   }
+
   footer span {
     grid-row: 1;
   }
+
   footer button {
     grid-row: 2;
   }
+
   footer ul {
     grid-row: 1 / 3;
     grid-column: 2;
@@ -78,19 +90,23 @@ footer button:hover {
     align-items: center;
     justify-items: center;
   }
+
   footer span {
     font-size: 1em;
   }
+
   footer button {
     grid-row: 2;
     font-size: 0.75em;
   }
+
   footer ul {
     grid-row: 3;
     grid-column: 1;
     justify-content: space-between;
     padding: 15px 0 0 0;
   }
+
   footer ul li a img {
     width: 30px;
     height: 30px;
