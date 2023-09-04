@@ -1,8 +1,7 @@
-button_navbar_menu = document.querySelector('button#navbar_menu')
-navbar = document.querySelector('nav')
+const buttonNavbarMenu = document.getElementById('navbar-menu')
+const navbar = document.getElementsByTagName('nav')[0]
 
-button_navbar_menu.addEventListener('click', () => {
-  button_navbar_menu.className = navbar.className = button_navbar_menu.className === 'close'
-  ? 'open'
-  : 'close'
+buttonNavbarMenu.addEventListener('click', () => {
+  buttonNavbarMenu.classList.toggle('open')
+  navbar.className = buttonNavbarMenu.className
 })
