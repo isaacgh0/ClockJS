@@ -3,10 +3,21 @@
 @import url('/styles/header.css');
 @import url('/styles/footer.css');
 
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5vh;
+}
+
 main div.clock-container {
   position: relative;
   width: 35vh;
   height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main div.clock-container div.progress {
@@ -17,9 +28,25 @@ main div.clock-container div.progress {
   border: 7px solid var(--clr-second);
   border-radius: 50%;
   transform: rotate(45deg);
-  transition: 1s linear;
   clip-path: polygon(0 0, 50% 50%, 0 0, 0 0, 0 0, 0 0);
+}
 
+main div.clock-container div.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+main div.clock-container div.clock input#time {
+  font-size: 2.6em;
+  font-weight: 900;
+  background: none;
+  color: var(--clr-contrast);
+  text-align: center;
+  width: 50%;
+  border: none;
 }
 
 main div.title {

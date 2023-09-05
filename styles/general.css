@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&family=Work+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@200;900&family=Work+Sans:wght@300;400;700&display=swap');
 
 * {
   margin: 0;
@@ -10,10 +10,6 @@ a,
 p,
 h1,
 h2,
-h3,
-h4,
-h5,
-h6,
 li,
 span,
 label,
@@ -22,7 +18,7 @@ button {
 }
 
 input {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Chivo Mono', monospace;
 }
 
 ul {

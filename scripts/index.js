@@ -1,36 +1,30 @@
 const userLocation = document.getElementById('user-location')
 const progress = document.querySelector('div.progress')
+const time = document.getElementById('time')
+const date = new Date()
 const api = 'http://ip-api.com/json/'
-
-fetch(api, { method: 'GET' })
-  .then(response => response.json())
-  .then(response => {
-    if (response.status === 'success') {
-      userLocation.innerText = `${response.city}, ${response.country}`
-    }
-  })
-  .catch(err => console.error(err))
-
-let secs = 0
 const cords = [
   { def: { x: 0, y: 0 }, real: { x: null, y: null } },
   { def: { x: 100, y: 0 }, real: { x: null, y: null } },
   { def: { x: 100, y: 100 }, real: { x: null, y: null } },
   { def: { x: 0, y: 100 }, real: { x: null, y: null } }
 ]
-progress.style.transition = '1s linear'
-setInterval(() => {
-  secs = secs + 1 > 59 ? 0 : secs + 1
+const now = {
+  hrs: date.getHours(),
+  min: date.getMinutes(),
+  sec: date.getSeconds()
+}
 
-  const more = secs % 15
-  const div = Math.floor(secs / 15)
+const updateSeconds = sec => {
+  const more = sec % 15
+  const div = Math.floor(sec / 15)
   const next = div + 1 === cords.length ? 0 : div + 1
   const cord = cords[div] ?? cords[0]
   const nCord = cords[next] ?? cords[1]
-
+  const percent = Math.floor(more * 100 / 15)
   const changer = { x: null, y: null }
 
-  if (secs < 1) {
+  if (sec < 1) {
     cords.forEach(item => { item.real.x = item.real.y = null })
   }
 
@@ -38,8 +32,6 @@ setInterval(() => {
     changer.x = cord.real.x = cord.def.x
     changer.y = cord.real.y = cord.def.y
   } else {
-    const percent = Math.floor(more * 100 / 15)
-
     changer.x = cord.def.x
     changer.y = cord.def.y
 
@@ -58,4 +50,36 @@ setInterval(() => {
     cords[1].real.x ?? changer.x}% ${cords[1].real.y ?? changer.y}%)`
 
   progress.style.clipPath = clip
+}
+
+fetch(api, { method: 'GET' })
+  .then(response => response.json())
+  .then(response => {
+    if (response.status === 'success') {
+      userLocation.innerText = `${response.city}, ${response.country}`
+    }
+  })
+  .catch(err => console.error(err))
+
+const already = Math.floor(now.sec / 15)
+
+if (already > 0) {
+  for (let i = 0; i <= already; i++) {
+    cords[i].real.x = cords[i].def.x
+    cords[i].real.y = cords[i].def.y
+  }
+}
+
+time.value = `${now.hrs}:${now.min}`
+
+progress.style.transition = '1s linear'
+setInterval(() => {
+  now.hrs = date.getHours()
+  now.min = date.getMinutes()
+  now.sec = date.getSeconds()
+
+  updateSeconds(now.sec)
+  time.value = `${now.hrs}:${now.min}`
+
+  date.setTime(date.getTime() + 1000)
 }, 1000)
