@@ -8,7 +8,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 5vh;
+  gap: 3vh;
 }
 
 main div.clock-container {
@@ -49,6 +49,22 @@ main div.clock-container div.clock input#time {
   border: none;
 }
 
+main div.clock-container div.clock span#midday {
+  position: absolute;
+  font-size: 1.2em;
+  font-weight: 300;
+  color: var(--clr-second);
+  inset: 105% auto auto auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+main div.clock-container div.clock span#midday.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
 main div.title {
   display: flex;
   flex-direction: column;
@@ -75,4 +91,53 @@ main div.title div.location span#user-location {
   color: var(--clr-contrast);
   font-weight: 300;
   font-size: 1.1em;
+}
+
+main div.actions {
+  margin-top: 8vh;
+}
+
+main div.actions div.switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+main div.actions div.switch-container span {
+  font-size: 1.2em;
+  color: var(--clr-contrast);
+  font-weight: 400;
+}
+
+main div.actions div.switch-container button {
+  border-radius: 32px;
+  width: 80px;
+  height: 32px;
+  background: var(--clr-contrast);
+  position: relative;
+  border: none;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+main div.actions div.switch-container button::after {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  content: '';
+  background: var(--clr-background);
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+  transition: 0.2s ease;
+}
+
+main div.actions div.switch-container button.on {
+  background: var(--clr-second);
+}
+
+main div.actions div.switch-container button.on::after {
+  left: calc(80px - 28px);
+  background: var(--clr-contrast);
 }

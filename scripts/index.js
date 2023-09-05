@@ -1,5 +1,7 @@
 const userLocation = document.getElementById('user-location')
 const progress = document.querySelector('div.progress')
+const middaySwitch = document.getElementById('midday-switch')
+const midday = document.getElementById('midday')
 const time = document.getElementById('time')
 const date = new Date()
 const api = 'http://ip-api.com/json/'
@@ -13,6 +15,24 @@ const now = {
   hrs: date.getHours(),
   min: date.getMinutes(),
   sec: date.getSeconds()
+}
+
+let middayFormat = false
+
+const updateTime = () => {
+  now.hrs = date.getHours()
+  now.min = date.getMinutes()
+  now.sec = date.getSeconds()
+
+  if (middayFormat) {
+    midday.innerText = `${now.hrs > 11 ? 'pm' : 'am'}`
+
+    if (now.hrs > 12) {
+      now.hrs -= 12
+    }
+  }
+
+  time.value = `${`0${now.hrs}`.slice(-2)}:${`0${now.min}`.slice(-2)}`
 }
 
 const updateSeconds = sec => {
@@ -52,6 +72,14 @@ const updateSeconds = sec => {
   progress.style.clipPath = clip
 }
 
+middaySwitch.addEventListener('click', e => {
+  middayFormat = !middayFormat
+  e.currentTarget.className = `${middayFormat ? 'on' : ''}`
+  midday.className = `${middayFormat ? 'visible' : ''}`
+
+  updateTime()
+})
+
 fetch(api, { method: 'GET' })
   .then(response => response.json())
   .then(response => {
@@ -70,16 +98,12 @@ if (already > 0) {
   }
 }
 
-time.value = `${now.hrs}:${now.min}`
+time.value = `${`0${now.hrs}`.slice(-2)}:${`0${now.min}`.slice(-2)}`
 
 progress.style.transition = '1s linear'
 setInterval(() => {
-  now.hrs = date.getHours()
-  now.min = date.getMinutes()
-  now.sec = date.getSeconds()
-
+  updateTime()
   updateSeconds(now.sec)
-  time.value = `${now.hrs}:${now.min}`
 
   date.setTime(date.getTime() + 1000)
 }, 1000)
