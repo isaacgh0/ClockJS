@@ -43,13 +43,13 @@ header nav ul li a {
 }
 
 header nav ul li a:not(.selected) {
-  color: var(--clr_contrast);
+  color: var(--clr-contrast);
 }
 
 header nav ul li a:not(.selected):hover,
 header nav ul li a:not(.selected):focus,
 header nav ul li a.selected {
-  color: var(--clr_second);
+  color: var(--clr-second);
   outline: none;
 }
 
@@ -57,7 +57,7 @@ header nav ul li a:after {
   content: '';
   width: 100%;
   transform-origin: 0% 50%;
-  border-bottom: 2px solid var(--clr_second);
+  border-bottom: 2px solid var(--clr-second);
   transition: 0.3s ease;
 }
 
@@ -117,7 +117,7 @@ header nav ul li a.selected {
     width: 90%;
     height: 4px;
     border-radius: 4px;
-    background: var(--clr_contrast);
+    background: var(--clr-contrast);
     left: 5%;
     transition: 0.3s ease;
     transform: rotate(0);
@@ -148,12 +148,12 @@ header nav ul li a.selected {
 
   header div.phone-view h1 {
     font-size: 1.6em;
-    color: var(--clr_main);
+    color: var(--clr-main);
   }
 
   header nav {
     width: 100%;
-    background: color-mix(in srgb, var(--clr_background), #000 30%);
+    background: color-mix(in srgb, var(--clr-background), #000 30%);
     justify-content: flex-start;
     height: fit-content;
     transition: 0.3s ease;

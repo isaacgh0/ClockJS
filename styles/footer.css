@@ -9,7 +9,7 @@ footer {
 
 footer span,
 footer button {
-  color: var(--clr_contrast);
+  color: var(--clr-contrast);
   font-size: 0.9em;
 }
 
@@ -39,7 +39,7 @@ footer ul li a:hover img {
 }
 
 footer a {
-  color: var(--clr_contrast);
+  color: var(--clr-contrast);
   border: none;
   cursor: pointer;
   transition: 0.2s ease;
@@ -49,7 +49,7 @@ footer a {
 footer a:focus,
 footer a:hover {
   outline: none;
-  color: var(--clr_main);
+  color: var(--clr-main);
 }
 
 @media screen and (max-width: 768px) {

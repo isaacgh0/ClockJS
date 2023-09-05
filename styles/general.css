@@ -5,17 +5,32 @@
   padding: 0;
   box-sizing: border-box;
 }
-h1, h2, h3, h4, h5, h6, span, p, li, button, a, label {
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+span,
+label,
+button {
   font-family: 'Work Sans', sans-serif;
 }
+
 input {
   font-family: 'IBM Plex Mono', monospace;
 }
+
 ul {
   list-style: none;
 }
+
 body {
-  background: var(--clr_background);
+  background: var(--clr-background);
   width: 100%;
   min-height: 100vh;
   display: flex;

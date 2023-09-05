@@ -1,7 +1,7 @@
 :root {
-  --clr_background: #232735;
-  --clr_second: #00CECB;
-  --clr_second_dark: #0FA3B1;
-  --clr_contrast: #E9E6FF;
-  --clr_main: #FF5E5B;
+  --clr-background: #232735;
+  --clr-second: #00CECB;
+  --clr-second-dark: #0FA3B1;
+  --clr-contrast: #E9E6FF;
+  --clr-main: #FF5E5B;
 }
