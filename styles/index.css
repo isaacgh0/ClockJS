@@ -25,7 +25,7 @@ main div.clock-container div.progress {
   width: 100%;
   height: 100%;
   background: transparent;
-  border: 7px solid var(--clr-second);
+  border: 5px solid var(--clr-second);
   border-radius: 50%;
   transform: rotate(45deg);
   clip-path: polygon(0 0, 50% 50%, 0 0, 0 0, 0 0, 0 0);
@@ -45,7 +45,6 @@ main div.clock-container div.clock input#time {
   background: none;
   color: var(--clr-contrast);
   text-align: center;
-  width: 50%;
   border: none;
 }
 
@@ -54,7 +53,7 @@ main div.clock-container div.clock span#midday {
   font-size: 1.2em;
   font-weight: 300;
   color: var(--clr-second);
-  inset: 105% auto auto auto;
+  inset: 100% auto auto auto;
   visibility: hidden;
   opacity: 0;
   transition: 0.2s ease;
@@ -140,4 +139,74 @@ main div.actions div.switch-container button.on {
 main div.actions div.switch-container button.on::after {
   left: calc(80px - 28px);
   background: var(--clr-contrast);
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    gap: 7vh;
+  }
+
+  main div.clock-container {
+    width: 30vh;
+    height: 30vh;
+  }
+
+  main div.clock-container div.clock input#time {
+    font-size: 2.2em;
+  }
+
+  main div.clock-container div.clock span#midday {
+    font-size: 1.1em;
+  }
+
+  main div.title h1 {
+    font-size: 2.2em;
+  }
+
+  main div.actions {
+    margin-top: 6vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main div.clock-container div.progress {
+    border: 4px solid var(--clr-second);
+  }
+
+  main div.clock-container div.clock input#time {
+    font-size: 1.6em;
+  }
+
+  main div.clock-container div.clock span#midday {
+    font-size: 1em;
+  }
+
+  main div.title h1 {
+    display: none;
+  }
+
+  main div.title div.location span#user-location {
+    font-size: 1em;
+  }
+
+  main div.actions div.switch-container span {
+    font-size: 1em;
+  }
+
+  main div.actions div.switch-container button {
+    border-radius: 26px;
+    width: 70px;
+    height: 26px;
+  }
+
+  main div.actions div.switch-container button::after {
+    width: 22px;
+    height: 22px;
+    top: 2px;
+    left: 2px;
+  }
+
+  main div.actions div.switch-container button.on::after {
+    left: calc(70px - 24px);
+  }
 }
