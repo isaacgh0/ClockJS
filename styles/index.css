@@ -46,6 +46,11 @@ main div.clock-container div.clock input#time {
   color: var(--clr-contrast);
   text-align: center;
   border: none;
+  width: 90%;
+}
+
+main div.clock-container div.clock input#time:focus {
+  outline: none;
 }
 
 main div.clock-container div.clock span#midday {
