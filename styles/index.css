@@ -25,13 +25,18 @@ main div.container div.progress {
   width: 100%;
   height: 100%;
   background: transparent;
-  border: 5px solid var(--clr-second);
   border-radius: 50%;
   transform: rotate(45deg);
 }
 
 main div.clock.container div.progress {
+  border: 5px solid var(--clr-second);
   clip-path: polygon(0 0, 50% 50%, 0 0, 0 0, 0 0, 0 0);
+}
+
+main div.stopwatch.container div.progress {
+  border: 3px solid var(--clr-second);
+  transition: 0.5s ease linear;
 }
 
 main div.container div {
@@ -52,19 +57,26 @@ main div.container div input#time {
   width: 90%;
 }
 
-main div.container div.clock input#time:focus {
+main div.container div input#time:focus {
   outline: none;
 }
 
-main div.container div.clock span#midday {
+main div.container div span {
   position: absolute;
   font-size: 1.2em;
-  font-weight: 300;
   color: var(--clr-second);
   inset: 100% auto auto auto;
+  transition: 0.2s ease;
+}
+
+main div.container div span#mili {
+  font-weight: 900;
+}
+
+main div.container div.clock span#midday {
+  font-weight: 300;
   visibility: hidden;
   opacity: 0;
-  transition: 0.2s ease;
 }
 
 main div.container div.clock span#midday.visible {
