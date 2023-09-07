@@ -16,31 +16,32 @@
     </div>
     <nav>
       <ul>
-        <li><a href="/" class="selected" tabindex="-1">Clock</a></li>
-        <li><a href="/stopwatch.html">Stopwatch</a></li>
+        <li><a href="/">Clock</a></li>
+        <li><a href="/stopwatch.html" class="selected" tabindex="-1">Stopwatch</a></li>
         <li><a href="/timer.html">Timer</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <div class="clock container">
+    <div class="container">
       <div class="progress"></div>
-      <div class="clock">
-        <input id="time" readonly>
-        <span id="midday"></span>
+      <div class="stopwatch">
+        <input id="time" readonly value="00:00">
       </div>
     </div>
     <div class="title">
-      <h1>Clock</h1>
-      <div class="location">
-        <img src="/assets/icons/map-pin-filled.svg" alt="location">
-        <span id="user-location"></span>
-      </div>
+      <h1>Stopwatch</h1>
     </div>
     <div class="actions">
-      <div class="switch-container">
-        <span>12H</span>
-        <button id="midday-switch"></button>
+      <div class="buttons">
+        <button class="image-button">
+          <img src="/assets/icons/player-play-filled.svg" alt="play">
+          <span>Play</span>
+        </button>
+        <button class="image-button">
+          <img src="/assets/icons/rotate-clockwise.svg" alt="reset">
+          <span>Reset</span>
+        </button>
       </div>
     </div>
   </main>
@@ -65,7 +66,6 @@
     </ul>
     <a href="https://tabler-icons.io/">Icons by TablerIcons.io</a>
   </footer>
-  <script src="/scripts/index.js"></script>
   <script src="/scripts/header.js"></script>
 </body>
 
