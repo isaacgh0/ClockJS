@@ -183,6 +183,10 @@ main div.actions div.buttons button:is(:hover, :focus) {
   background: var(--clr-second-dark);
 }
 
+main div.actions div.buttons button img {
+  height: 100%;
+}
+
 main div.actions div.buttons button span {
   color: var(--clr-background);
   font-size: 1.4em;
@@ -202,7 +206,7 @@ main div.actions div.buttons button span {
     font-size: 2.2em;
   }
 
-  main div.container div.clock span#midday {
+  main div.container div span {
     font-size: 1.1em;
   }
 
@@ -212,6 +216,19 @@ main div.actions div.buttons button span {
 
   main div.actions {
     margin-top: 6vh;
+  }
+
+  main div.actions div.buttons {
+    flex-direction: column;
+  }
+
+  main div.actions div.buttons button {
+    width: 100%;
+    padding: 10px 34px 10px 30px;
+  }
+
+  main div.actions div.buttons button span {
+    font-size: 1.2em;
   }
 }
 
@@ -224,8 +241,9 @@ main div.actions div.buttons button span {
     font-size: 1.6em;
   }
 
-  main div.container div.clock span#midday {
+  main div.container div span {
     font-size: 1em;
+    font-weight: 300 !important;
   }
 
   main div.title h1 {
@@ -255,5 +273,13 @@ main div.actions div.buttons button span {
 
   main div.actions div.switch-container button.on::after {
     left: calc(70px - 24px);
+  }
+
+  main div.actions div.buttons button {
+    padding: 10px 30px 10px 26px;
+  }
+
+  main div.actions div.buttons button span {
+    font-size: 1.1em;
   }
 }
