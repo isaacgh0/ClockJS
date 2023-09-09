@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <link rel="stylesheet" href="/styles/index.css">
+</head>
+
+<body>
+  <header>
+    <div class="phone-view">
+      <button id="navbar-menu" title="navbar-menu"></button>
+      <h1>Timer</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Clock</a></li>
+        <li><a href="/stopwatch.html">Stopwatch</a></li>
+        <li><a href="/timer.html" class="selected" tabindex="-1">Timer</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <dialog>
+      <form>
+        <div class="input-data">
+          <input type="number" id="user-minutes" placeholder="00">
+          <span>:</span>
+          <input type="number" id="user-seconds" placeholder="00">
+        </div>
+        <div class="actions">
+          <button>Cancelar</button>
+          <button>Aceptar</button>
+        </div>
+      </form>
+    </dialog>
+    <div class="timer container">
+      <div class="progress"></div>
+      <div class="timer">
+        <input id="time" value="00:00" readonly>
+      </div>
+    </div>
+    <div class="title">
+      <h1>Timer</h1>
+    </div>
+    <div class="actions">
+      <div class="buttons">
+        <button class="image-button" id="play-stopwatch">
+          <img src="/assets/icons/player-play-filled.svg" alt="play">
+          <span>Play</span>
+        </button>
+        <button class="image-button" id="reset-stopwatch">
+          <img src="/assets/icons/rotate-clockwise.svg" alt="reset">
+          <span>Reset</span>
+        </button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <span>Created by IsaacGH</span>
+    <ul>
+      <li>
+        <a href="https://twitter.com/isaacgh_0">
+          <img src="/assets/icons/brand-twitter-filled.svg" alt="twitter" title="Twitter">
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/isaacgh0">
+          <img src="/assets/icons/brand-github-filled.svg" alt="github" title="Gitbub">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/isaacgh0/">
+          <img src="/assets/icons/brand-linkedin.svg" alt="linkedin" title="LinkedIn">
+        </a>
+      </li>
+    </ul>
+    <a href="https://tabler-icons.io/">Icons by TablerIcons.io</a>
+  </footer>
+  <script src="/scripts/timer.js"></script>
+  <script src="/scripts/header.js"></script>
+</body>
+
+</html>
