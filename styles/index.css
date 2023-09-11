@@ -12,12 +12,23 @@ main {
 }
 
 main dialog {
+  display: flex;
   position: fixed;
   top: 3vh;
   margin: 0 auto;
   width: 20vw;
   border: none;
   background: var(--clr-background);
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+}
+
+main dialog.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 main dialog form {
@@ -29,25 +40,33 @@ main dialog form {
   background: var(--clr-background);
   border: 2px solid var(--clr-second);
   border-radius: 5px;
-  gap: 2vh;
+  gap: 1.3vh;
   padding: 35px;
 }
 
-main dialog form div.input-data {
+main dialog form div.top {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3px;
+}
+
+main dialog form div.top div.input-data {
+  display: flex;
+  align-items: flex-end;
   justify-content: flex-start;
   flex-direction: row;
   gap: 5px;
 }
 
-main dialog form div.input-data input::-webkit-inner-spin-button,
-main dialog form div.input-data input::-webkit-outer-spin-button {
+main dialog form div.top div.input-data input::-webkit-inner-spin-button,
+main dialog form div.top div.input-data input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-main dialog form div.input-data input {
+main dialog form div.top div.input-data input {
   width: 50px;
   text-align: center;
   background: color-mix(in srgb, var(--clr-background), #000 30%);
@@ -57,13 +76,24 @@ main dialog form div.input-data input {
   padding: 4px 8px;
 }
 
-main dialog form div.input-data input:is(:focus, :hover) {
+main dialog form div.top div.input-data input:is(:focus, :hover) {
   outline: none;
 }
 
-main dialog form div.input-data span {
+main dialog form div.top div.input-data span {
   color: var(--clr-contrast);
   font-size: 1.5em;
+}
+
+main dialog form div.top>span {
+  color: var(--clr-main);
+  font-size: 0.9em;
+  opacity: 0;
+  transform: 0.1s ease;
+}
+
+main dialog form div.top>span.visible {
+  opacity: 1;
 }
 
 main dialog form div.actions {

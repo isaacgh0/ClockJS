@@ -25,14 +25,18 @@
   <main>
     <dialog>
       <form>
-        <div class="input-data">
-          <input type="number" id="user-minutes" placeholder="00">
-          <span>:</span>
-          <input type="number" id="user-seconds" placeholder="00">
+        <div class="top">
+          <div class="input-data">
+            <input type="number" id="user-minutes" placeholder="00">
+            <span>:</span>
+            <input type="number" id="user-seconds" placeholder="00">
+            <span>ss</span>
+          </div>
+          <span class="error-message">Time count isn't valid</span>
         </div>
         <div class="actions">
-          <button>Cancelar</button>
-          <button>Aceptar</button>
+          <button id="cancel-dialog">Cancelar</button>
+          <button id="submit-dialog">Aceptar</button>
         </div>
       </form>
     </dialog>
