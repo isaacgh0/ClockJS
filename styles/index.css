@@ -136,6 +136,10 @@ main dialog form div.actions button:first-child:is(:focus, :hover) {
   color: var(--clr-contrast);
 }
 
+main div.sound {
+  display: none;
+}
+
 main div.container {
   position: relative;
   width: 35vh;

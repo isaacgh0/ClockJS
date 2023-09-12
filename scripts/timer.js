@@ -7,6 +7,7 @@ const cancelDialog = document.getElementById('cancel-dialog')
 const submitDialog = document.getElementById('submit-dialog')
 const errorMessage = document.getElementsByClassName('error-message')[0]
 const inputs = [...dialog.getElementsByTagName('input')]
+const audio = document.getElementById('audio')
 const regexNumber = /^[0-9:]+$/
 const regexSpecial = /^[-e:]+$/
 const date = new Date()
@@ -20,6 +21,7 @@ const cords = [
 let totalMiliseconds = 0
 let progressMiliseconds = 0
 let interval
+let timeout
 let minutes = 0
 let seconds = 0
 
@@ -35,6 +37,11 @@ const reset = () => {
   date.setMilliseconds(0)
 
   progressMiliseconds = totalMiliseconds
+
+  audio.pause()
+  audio.currentTime = 0
+
+  clearTimeout(timeout)
 
   playTimer.firstElementChild.src = 'assets/icons/player-play-filled.svg'
   playTimer.lastElementChild.innerHTML = 'Play'
@@ -106,6 +113,12 @@ const init = () => {
 
       playTimer.firstElementChild.src = 'assets/icons/player-play-filled.svg'
       playTimer.lastElementChild.innerHTML = 'Play'
+
+      audio.play()
+      timeout = setTimeout(() => {
+        audio.pause()
+        audio.currentTime = 0
+      }, 9000)
     }
   }, 250)
 }
@@ -157,8 +170,7 @@ submitDialog.addEventListener('click', () => {
 
   time.value = getLocaleTime([minutes, seconds])
 
-  totalMiliseconds = minutes * 60000 + (seconds) * 1000
-  progressMiliseconds = totalMiliseconds
+  progressMiliseconds = totalMiliseconds = minutes * 60000 + (seconds) * 1000
 
   dialog.classList.remove('visible')
   dialog.close()
