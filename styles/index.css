@@ -157,7 +157,7 @@ main div.clock.container div.progress {
 }
 
 main div.stopwatch.container div.progress {
-  transition: 0.5s ease linear;
+  transition: 22ms linear;
 }
 
 main div.container div {
