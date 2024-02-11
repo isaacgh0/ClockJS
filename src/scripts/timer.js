@@ -43,7 +43,7 @@ const reset = () => {
 
   clearTimeout(timeout)
 
-  playTimer.firstElementChild.src = 'assets/icons/player-play-filled.svg'
+  playTimer.firstElementChild.src = '/src/assets/icons/player-play-filled.svg'
   playTimer.lastElementChild.innerHTML = 'Play'
 
   time.value = getLocaleTime([date.getMinutes(), date.getSeconds()])
@@ -111,7 +111,7 @@ const init = () => {
       clearInterval(interval)
       interval = undefined
 
-      playTimer.firstElementChild.src = 'assets/icons/player-play-filled.svg'
+      playTimer.firstElementChild.src = '/src/assets/icons/player-play-filled.svg'
       playTimer.lastElementChild.innerHTML = 'Play'
 
       audio.play()
@@ -178,7 +178,7 @@ submitDialog.addEventListener('click', () => {
 
 playTimer.addEventListener('click', e => {
   if (date.getMinutes() > 0 || date.getSeconds() > 0) {
-    e.currentTarget.firstElementChild.src = `assets/icons/player-${interval ? 'play' : 'pause'}-filled.svg`
+    e.currentTarget.firstElementChild.src = `/src/assets/icons/player-${interval ? 'play' : 'pause'}-filled.svg`
     e.currentTarget.lastElementChild.innerHTML = interval ? 'Play' : 'Pause'
     interval ? pause() : init()
   }

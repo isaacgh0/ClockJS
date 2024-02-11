@@ -42,7 +42,7 @@ const reset = () => {
   date.setSeconds(0)
   date.setMilliseconds(0)
 
-  playStopwatch.firstElementChild.src = 'assets/icons/player-play-filled.svg'
+  playStopwatch.firstElementChild.src = '/src/assets/icons/player-play-filled.svg'
   playStopwatch.lastElementChild.innerHTML = 'Play'
 
   time.value = getLocaleTime([date.getMinutes(), date.getSeconds()])
@@ -51,7 +51,7 @@ const reset = () => {
 }
 
 playStopwatch.addEventListener('click', e => {
-  e.currentTarget.firstElementChild.src = `assets/icons/player-${interval ? 'play' : 'pause'}-filled.svg`
+  e.currentTarget.firstElementChild.src = `/src/assets/icons/player-${interval ? 'play' : 'pause'}-filled.svg`
   e.currentTarget.lastElementChild.innerHTML = interval ? 'Play' : 'Pause'
   interval ? pause() : init()
 })
